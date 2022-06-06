@@ -29,7 +29,7 @@ function App() {
       {isLoading ? (
         <Loading color="error" size="xl" />
       ) : (
-        <PokemonGrid response={response} />
+        <PokemonGrid response={response} P={P} />
       )}
     </NextUIProvider>
   );
