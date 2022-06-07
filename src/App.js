@@ -17,10 +17,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getPokemon();
+    getPokemon(false);
   }, []);
 
-  const getPokemon = (nextPage = false) => {
+  const getPokemon = (nextPage) => {
     P.getResource([nextPage ? response.next : initialURL])
       .then((res) => {
         const { count, next, previous, results: newResults } = res[0];
