@@ -8,7 +8,6 @@ export const PokemonCard = ({ name, url, P }) => {
   useEffect(() => {
     P.getPokemonByName(name)
       .then((res) => {
-        // console.log("name: ", res);
         setPokemonInfo(res);
         setIsLoading(false);
       })
@@ -40,7 +39,11 @@ export const PokemonCard = ({ name, url, P }) => {
                 <Text h3 weight="bold">
                   {name}
                 </Text>
-                <Text size={12} weight="thin">
+                <Text
+                  size={12}
+                  weight="thin"
+                  css={{ position: "relative", bottom: "$2" }}
+                >
                   {pokemonInfo.types.map(({ type }) => type.name).join(" / ")}
                 </Text>
               </div>
